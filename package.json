@@ -1,0 +1,47 @@
+{
+  "name": "learn-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "serv": "node server/app.js"
+  },
+  "license": "ISC",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "gray-matter": "^4.0.2",
+    "next": "9.3.5",
+    "normalize.css": "^8.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.5",
+    "@types/react": "^16.9.34",
+    "@zeit/next-stylus": "^1.0.1",
+    "autoprefixer": "^9.7.6",
+    "classnames": "^2.2.6",
+    "next-compose-plugins": "^2.2.0",
+    "next-images": "^1.4.0",
+    "next-react-svg": "^1.1.1",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "stylus": "^0.54.7",
+    "typescript": "^3.8.3"
+  }
+}

@@ -1,0 +1,101 @@
+.MobileApp {
+  background:  url(../../assets/img/mobile-app__bg--mobile.png) no-repeat 50% #607D8B;
+  background-size: cover;
+  padding: 43px 0;
+}
+
+@media (min-width: 768px) {
+  .MobileApp {
+    background: #607D8B url(../../assets/img/mobile-app__bg.png);
+    background-position: 50% 0;
+    background-size: cover;
+    padding: 70px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .MobileApp {
+    padding: 78px 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  .MobileApp {
+    padding: 118px 0;
+  }
+}
+
+.MobileApp__wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .MobileApp__wrapper {
+    align-items: flex-end;
+  }
+}
+
+.MobileApp__inner {
+  width: 100%;
+  max-width: 48%;
+  min-width: 343px;
+  max-width: 480px;
+}
+
+.MobileApp__img {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .MobileApp__img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+  }
+}
+
+.MobileApp__title {
+  margin-bottom: 12px;
+  color: #fff;
+  max-width: 280px;
+}
+
+@media (min-width: 768px) {
+  .MobileApp__title {
+    max-width: unset;
+  }
+}
+
+.MobileApp__title__inline {
+  display: block;
+}
+
+.MobileApp__text {
+  font-family: 'SourceSansPro', sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.MobileApp__text:last-child {
+  margin-bottom: 0;
+}
+
+.MobileApp__app-block {
+  margin-top: 28px;
+}
+
+.MobileApp__app-block__img {
+  width: 164px;
+  height: 48px;
+}
+
+.MobileApp__app-block__img:first-child {
+  margin-right: 12px;
+}
