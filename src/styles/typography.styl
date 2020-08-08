@@ -3,5 +3,38 @@ h1, h2, h3, h4, h5, p, a
   padding 0
   font-family $accent-font
 
+h2
+  font-family sans-serif
+  font-size 28px
+  line-height 36px
+  color #000000
+
+  @media (min-width 768px)
+    font-size 40px
+    line-height 48px
+
 a
   text-decoration none
+
+  &hover, &active, &focus
+    outline none
+
+global
+  .title-h2
+    font-family 'SquadExtraBold', sans-serif
+    font-weight 800
+    color #000000
+    font-size 32px
+    line-height 40px
+
+    @media (min-width 1600px)
+      font-size 40px
+      line-height 48px
+      letter-spacing -0.4px
+    
+  .title-h3
+    font-family 'SquadExtraBold', sans-serif
+    font-weight 800
+    font-size 24px
+    line-height 32px
+    color #000000
