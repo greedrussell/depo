@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Nav from './nav/nav.component'
+// import Nav from '../src/pages/savings-account/components/nav/nav.component'
 import Footer from './footer/footer.component'
 
 interface IProps {

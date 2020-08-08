@@ -17,7 +17,7 @@ const Home: React.FC<IPosts> = () => {
 				<div className="container">
 					<br />
 					<br />
-					<h1 className="title">Keks</h1>
+					<h1 className="title">Home INdex page</h1>
 					<Link href="/posts/ssg-ssr">
 						<a href="/posts/ssg-ssr">(Link) SSR</a>
 					</Link>
