@@ -1,8 +1,6 @@
-@import 'variable'
-
-global
+:global
   .btn
-    font-family 'SourceSansProBold', sans-serif
+    font-family $accent-font
     font-weight bold
     font-size 16px
     line-height 24px
@@ -27,20 +25,20 @@ global
     &--green
       background-color #52AE30
 
-      &hover, &active, &focus
+      &:hover, &:active, &:focus
         background-color #6ECD4A
 
     &--orange
       background-color #FF6600
 
-      &hover, &active, &focus
+      &:hover, &:active, &:focus
         background-color #FF802B
 
     &--opacity
       background-color rgba(0,0,0,0)
       border 2px solid #fff
 
-      &hover, &active, &focus
+      &:hover, &:active, &:focus
         border 2px solid #FF802B
         background #FF802B
 
