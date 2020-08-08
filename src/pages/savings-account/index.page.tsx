@@ -1,9 +1,21 @@
-import React from 'react'
+import Head from 'next/head'
+
+import styles from './saving-account.module.styl'
+import HeroImg from './components/hero-img/hero-img.component'
 
 const DepositPlusCardPage: React.FC<{}> = () => (
 	<>
-		{/* <HeroImg />
-		<ActionInfo />
+		<Head>
+			<title>Накопительный счет</title>
+		</Head>
+		<section className={styles['hero-img']}>
+			{/* <HeroImgNav isScroll={isScroll} /> */}
+			<div className="container">
+				<HeroImg />
+			</div>
+		</section>
+
+		{/* <ActionInfo />
 		<AboutAction />
 		<Calculator />
 		<HowItWork />
@@ -11,7 +23,6 @@ const DepositPlusCardPage: React.FC<{}> = () => (
 		<Faq />
 		<MobileApp />
 		<Footer /> */}
-		<h2>Deposit + card</h2>
 	</>
 )
 

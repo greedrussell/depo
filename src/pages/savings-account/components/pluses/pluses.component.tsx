@@ -1,4 +1,4 @@
-import ArrowSVG from '../../../../public/assets/svg/hero-img__arrow.svg'
+import ArrowSVG from '../../../../../public/assets/svg/hero-img__arrow.svg'
 import styles from './pluses.module.styl'
 
 const HeroImgPluses = () => (
