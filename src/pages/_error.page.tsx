@@ -1,6 +1,13 @@
-// для обработки ошибок 404 и 500
-function Error() {
-	return <h1>Keks is 404!</h1>
+import React from 'react'
+import Error from 'next/error'
+
+interface IProps {
+	statusCode: any
 }
 
-export default Error
+// для обработки ошибок 404 и 500
+const CustomError: React.FC<IProps> = ({ statusCode }) => (
+	<Error statusCode={statusCode} />
+)
+
+export default CustomError 
