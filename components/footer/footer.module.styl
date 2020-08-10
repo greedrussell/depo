@@ -1,0 +1,28 @@
+@import '../../src/styles/variable'
+
+.footer
+  background #EFF2F9
+
+.top
+  padding 26px 0
+  border-bottom 1px solid #E2E6F0
+
+  @media (min-width $tablet)
+    padding 0
+
+.middle
+  display flex
+  justify-content space-between
+  padding 26px 0
+  flex-direction column
+
+  @media (min-width $tablet)
+    flex-direction row
+    padding 32px 0
+
+.left > *:last-child
+  margin-bottom 52px
+
+  @media (min-width $tablet)
+    margin-bottom 0
+    

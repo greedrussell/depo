@@ -1,4 +1,4 @@
-export default interface IFooterMenuItem {
+export interface IFooterMenuItem {
 	id: number
 	title: string
 	link: string

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import AppleSVG from '../../../../public/assets/images/footer__mobile-app--apple.svg'
-import GoogleSVG from '../../../../public/assets/images/footer__mobile-app--google.svg'
+import AppleSVG from '../../../../public/assets/svg/footer__mobile-app--apple.svg'
+import GoogleSVG from '../../../../public/assets/svg/footer__mobile-app--google.svg'
 import styles from './mobile-app.module.styl'
 
 const MobileApp = () => (

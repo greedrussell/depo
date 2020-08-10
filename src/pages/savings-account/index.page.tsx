@@ -3,10 +3,13 @@ import Head from 'next/head'
 import styles from './saving-account.module.styl'
 import Layout from '../../../components/layout'
 import HeroImg from './components/hero-img/hero-img.component'
-import { IFooter } from '../../../components/footer/footer.interface'
+import {
+	IFooter,
+	IFooterMenuItem,
+} from '../../../components/footer/footer.interface'
 import LogoSVG from '../../../public/assets/svg/footer__logo.svg'
 
-const MENU__LIST = [
+const MENU__LIST: IFooterMenuItem[] = [
 	{
 		id: 1,
 		title: 'Офисы',

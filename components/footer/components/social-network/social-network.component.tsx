@@ -1,9 +1,9 @@
 import React from 'react'
 
-import FbSVG from '../../../../public/assets/images/footer__fb.svg'
-import VkSVG from '../../../../public/assets/images/footer__vk.svg'
-import InSVG from '../../../../public/assets/images/footer__in.svg'
-import OkSVG from '../../../../public/assets/images/footer__ok.svg'
+import FbSVG from '../../../../public/assets/svg/footer__fb.svg'
+import VkSVG from '../../../../public/assets/svg/footer__vk.svg'
+import InSVG from '../../../../public/assets/svg/footer__in.svg'
+import OkSVG from '../../../../public/assets/svg/footer__ok.svg'
 import styles from './social-network.module.styl'
 
 const SocialNetwork: React.FC<{}> = () => (

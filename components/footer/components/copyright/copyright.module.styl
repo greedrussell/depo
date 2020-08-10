@@ -1,10 +1,12 @@
+@import '../../../../src/styles/variable'
+
 .block
-  font-family 'SourceSansPro', sans-serif
+  font-family $accent-font
   font-weight normal
   font-size 14px
   line-height 24px
   color #FFFFFF
-  background-color #52AE30
+  background-color $green
   border-top-left-radius 44px
   border-top-right-radius 44px
 
@@ -13,7 +15,7 @@
   flex-direction column
   padding 32px 0
 
-  @media (min-width 768px)
+  @media (min-width $tablet)
     padding 0
     flex-direction row
     align-items center
@@ -27,12 +29,12 @@
   margin-bottom 8px
   margin-top 24px
 
-  @media (min-width 768px)
+  @media (min-width $tablet)
     margin-bottom 0
     margin-top 0
 
 .copyright
-  font-family 'Source Sans Pro', sans-serif
+  font-family $secondary-font
   font-style normal
   font-weight normal
   font-size 14px

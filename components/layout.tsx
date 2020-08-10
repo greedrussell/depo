@@ -5,6 +5,7 @@ import Footer from './footer/footer.component'
 import { IFooter } from './footer/footer.interface'
 
 interface IProps {
+	children: React.ReactNode
 	footer: IFooter
 }
 
