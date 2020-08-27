@@ -1,13 +1,14 @@
 import Head from 'next/head'
 
 import styles from './saving-account.module.styl'
-import Layout from '../../../components/layout'
-import HeroImg from './components/hero-img/hero-img.component'
 import {
 	IFooter,
 	IFooterMenuItem,
 } from '../../../components/footer/footer.interface'
 import LogoSVG from '../../../public/assets/svg/footer__logo.svg'
+import Layout from '../../../components/layout'
+import HeroImg from './components/hero-img/hero-img.component'
+import ActionInfoContainer from './components/action-info/action-info.container'
 
 const MENU__LIST: IFooterMenuItem[] = [
 	{
@@ -54,7 +55,13 @@ const DepositPlusCardPage: React.FC<{}> = () => (
 					<HeroImg />
 				</div>
 			</section>
-			{/* <ActionInfo />
+			<section className={styles['action-info']}>
+				<div className="container">
+					<ActionInfoContainer />
+				</div>
+			</section>
+
+			{/* 
 				<AboutAction />
 				<Calculator />
 				<HowItWork />

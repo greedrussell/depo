@@ -1,0 +1,44 @@
+@import '../../../../styles/variable.styl'
+  
+.wrapper 
+  display flex
+  position relative
+
+.left 
+  flex 1 0
+  min-width 0
+
+.title 
+  font-family $title-font
+  font-weight 800
+  letter-spacing -0.02em
+  color $dark-black
+  font-size 34px
+  line-height 48px
+
+  @media (min-width $tablet) 
+    font-size 40px
+    line-height 48px
+    margin-bottom 16px
+    
+  @media (min-width $laptop) 
+    font-size 44px
+    line-height 56px
+    
+  @media (min-width $desktop) 
+    font-size 56px
+    line-height 72px
+    margin-bottom 32px
+    max-width 50%
+  
+.text 
+  font-family $title-font
+  font-weight 800
+  font-size 20px
+  line-height 28px
+  color $light-black
+
+  @media (min-width $tablet) 
+    font-size 24px
+    line-height 32px
+    max-width 50%

@@ -32,6 +32,7 @@
     "react-scroll": "^1.8.0"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.10",
     "@types/node": "^13.13.5",
     "@types/react": "^16.9.34",
     "@zeit/next-stylus": "^1.0.1",
