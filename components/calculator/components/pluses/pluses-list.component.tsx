@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './calculator-pluses-list.module.styl'
+import styles from './pluses-list.module.styl'
 import ArrowSVG from '../../../../public/assets/svg/calculator__arrow.svg'
 
 interface IProps {

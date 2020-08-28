@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 
-import styles from './calculator-info-panel.module.styl'
+import styles from './info-panel.module.styl'
 
 interface IProps {
 	date: string

@@ -1,11 +1,11 @@
 import React from 'react'
 
 import styles from './calculator.module.styl'
-import CalculatorInfoPanelComponent from './components/calculator-info-panel/calculator-info-panel.component'
-import CalculatorPlusesListComponent from './components/calculator-pluses/calculator-pluses-list.component'
-import CalculatorInputComponent from './components/calculator-input/calculator-input.component'
-import CalculatorMonthTabsComponent from './components/calculator-month-tabs/calculator-month-tabs.component'
-import CalculatorBonusInputComponent from './components/calculator-bonus-input/calculator-bonus-input.component'
+import CalculatorInfoPanelComponent from './components/info-panel/info-panel.component'
+import CalculatorPlusesListComponent from './components/pluses/pluses-list.component'
+import CalculatorInputComponent from './components/input/input.component'
+import CalculatorMonthTabsComponent from './components/month-tabs/month-tabs.component'
+import CalculatorBonusInputComponent from './components/bonus-input/bonus-input.component'
 
 interface IDeposit {
 	id: number

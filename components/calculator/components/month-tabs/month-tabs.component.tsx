@@ -1,7 +1,7 @@
 import React from 'react'
 
-import styles from './calculator-month-tabs.module.styl'
-import TabComponent from './tab.component'
+import styles from './month-tabs.module.styl'
+import CalculatorTabComponent from '../tab/tab.component'
 
 interface IDeposit {
 	id: number
@@ -28,7 +28,7 @@ const CalculatorMonthTabsComponent: React.FC<IProps> = ({
 		<h3 className={styles.title}>{title}</h3>
 		<ul className={styles.list}>
 			{deposit.map((item: IDeposit) => (
-				<TabComponent
+				<CalculatorTabComponent
 					isActive={month === item.month}
 					title={item.title}
 					subTitle={item.subTitle}

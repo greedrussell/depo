@@ -1,8 +1,8 @@
 import React from 'react'
 import { Range, getTrackBackground } from 'react-range'
 
-import styles from './calculator-range.module.styl'
-import CalculatorThumpComponent from '../calculator-thumb/calculator-thumb.component'
+import styles from './range.module.styl'
+import CalculatorThumpComponent from '../thumb/thumb.component'
 
 interface IProps {
 	rate: number[]

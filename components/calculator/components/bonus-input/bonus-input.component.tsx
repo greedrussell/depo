@@ -1,7 +1,7 @@
 import React from 'react'
 
-import styles from './calculator-bonus-input.module.styl'
-import CalculatorRangeSliderContainer from '../calculator-range/calculator-range.container'
+import styles from './bonus-input.module.styl'
+import CalculatorRangeSliderContainer from '../range/range.container'
 
 interface IProps {
 	transactionRate: number
