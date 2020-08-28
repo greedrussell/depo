@@ -2,7 +2,7 @@ import React from 'react'
 import { Range, getTrackBackground } from 'react-range'
 
 import styles from './calculator-range.module.styl'
-import CalculatorThump from '../calculator-thumb/calculator-thumb.component'
+import CalculatorThumpComponent from '../calculator-thumb/calculator-thumb.component'
 
 interface IProps {
 	rate: number[]
@@ -12,7 +12,7 @@ interface IProps {
 	handleChange: (transactionRate: number[]) => void
 }
 
-class CalculatorRangeSlider extends React.Component<IProps, {}> {
+class CalculatorRangeSliderContainer extends React.Component<IProps, {}> {
 	shouldComponentUpdate(nextProps: IProps) {
 		if (nextProps.rate[0] > nextProps.max) {
 			return false
@@ -52,11 +52,11 @@ class CalculatorRangeSlider extends React.Component<IProps, {}> {
 							</div>
 						</div>
 					)}
-					renderThumb={CalculatorThump}
+					renderThumb={CalculatorThumpComponent}
 				/>
 			</div>
 		)
 	}
 }
 
-export default CalculatorRangeSlider
+export default CalculatorRangeSliderContainer

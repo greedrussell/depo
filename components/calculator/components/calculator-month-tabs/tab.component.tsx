@@ -10,7 +10,7 @@ interface IProps {
 	handleClick: () => void
 }
 
-const Tab: React.FC<IProps> = ({
+const TabComponent: React.FC<IProps> = ({
 	isActive,
 	title,
 	subTitle = '',
@@ -29,4 +29,4 @@ const Tab: React.FC<IProps> = ({
 	)
 }
 
-export default Tab
+export default TabComponent

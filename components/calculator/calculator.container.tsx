@@ -2,10 +2,10 @@ import React from 'react'
 
 import styles from './calculator.module.styl'
 import CalculatorInfoPanelComponent from './components/calculator-info-panel/calculator-info-panel.component'
-import PlusesList from './components/pluses/pluses-list.component'
-import CalculatorInput from './components/calculator-input/calculator-input.component'
-import CalculatorMonthTabs from './components/calculator-month-tabs/calculator-month-tabs.component'
-import CalculatorBonusInput from './components/calculator-bonus-input/calculator-bonus-input.component'
+import CalculatorPlusesListComponent from './components/calculator-pluses/calculator-pluses-list.component'
+import CalculatorInputComponent from './components/calculator-input/calculator-input.component'
+import CalculatorMonthTabsComponent from './components/calculator-month-tabs/calculator-month-tabs.component'
+import CalculatorBonusInputComponent from './components/calculator-bonus-input/calculator-bonus-input.component'
 
 interface IDeposit {
 	id: number
@@ -30,7 +30,7 @@ interface IState {
 	totalSum: number
 }
 
-class Calculator extends React.Component<{}, IState> {
+class CalculatorContainer extends React.Component<{}, IState> {
 	constructor(props: {}) {
 		super(props)
 
@@ -350,10 +350,10 @@ class Calculator extends React.Component<{}, IState> {
 						Рассчитайте доход&nbsp;
 						<span className={styles.inline}>по накопительному счету</span>
 					</h2>
-					<PlusesList />
+					<CalculatorPlusesListComponent />
 					<div className={styles.main}>
 						<div className={styles.left}>
-							<CalculatorInput
+							<CalculatorInputComponent
 								depositRate={depositRate}
 								minDepositRate={minDepositRate}
 								maxDepositRate={maxDepositRate}
@@ -363,13 +363,13 @@ class Calculator extends React.Component<{}, IState> {
 								handleInputChange={this.handleInputChange}
 								handleChange={this.handleInputRangeChange}
 							/>
-							<CalculatorMonthTabs
+							<CalculatorMonthTabsComponent
 								deposit={deposit}
 								month={month}
 								title={'Укажите срок накопления'}
 								handleClick={this.handleMonthClick}
 							/>
-							<CalculatorBonusInput
+							<CalculatorBonusInputComponent
 								transactionRate={transactionRate}
 								bonusPercent={bonusPercent}
 								handleBonusInputChange={this.handleBonusInputChange}
@@ -392,4 +392,4 @@ class Calculator extends React.Component<{}, IState> {
 	}
 }
 
-export default Calculator
+export default CalculatorContainer

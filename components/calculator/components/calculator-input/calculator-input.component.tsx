@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './calculator-input.module.styl'
-import CalculatorRangeSlider from '../calculator-range/calculator-range.component'
+import CalculatorRangeSliderContainer from '../calculator-range/calculator-range.container'
 
 interface IProps {
 	depositRate: number
@@ -14,7 +14,7 @@ interface IProps {
 	title: string
 }
 
-const CalculatorInput: React.FC<IProps> = ({
+const CalculatorInputComponent: React.FC<IProps> = ({
 	depositRate,
 	minDepositRate,
 	maxDepositRate,
@@ -42,7 +42,7 @@ const CalculatorInput: React.FC<IProps> = ({
 					onChange={handleInputChange}
 					onBlur={handleInputBlur}
 				/>
-				<CalculatorRangeSlider
+				<CalculatorRangeSliderContainer
 					min={minDepositRate}
 					max={maxDepositRate}
 					rate={[depositRate]}
@@ -58,4 +58,4 @@ const CalculatorInput: React.FC<IProps> = ({
 	)
 }
 
-export default CalculatorInput
+export default CalculatorInputComponent

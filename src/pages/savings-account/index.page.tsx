@@ -44,7 +44,7 @@ const FOOTER_CONFIG: IFooter = {
 	logoUrl: LogoSVG,
 }
 
-const DepositPlusCardPage: React.FC<{}> = () => (
+const SavingAccountPage: React.FC<{}> = () => (
 	<>
 		<Head>
 			<title>Накопительный счет</title>
@@ -71,10 +71,9 @@ const DepositPlusCardPage: React.FC<{}> = () => (
 				<HowItWork />
 				<CustomerInfo />
 				<Faq />
-				<MobileApp />
-				<Footer /> */}
+				<MobileApp /> */}
 		</Layout>
 	</>
 )
 
-export default DepositPlusCardPage
+export default SavingAccountPage

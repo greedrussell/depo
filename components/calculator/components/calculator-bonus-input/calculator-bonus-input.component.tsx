@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './calculator-bonus-input.module.styl'
-import CalculatorRangeSlider from '../calculator-range/calculator-range.component'
+import CalculatorRangeSliderContainer from '../calculator-range/calculator-range.container'
 
 interface IProps {
 	transactionRate: number
@@ -11,7 +11,7 @@ interface IProps {
 	handleBonusInputRangeChange: (transactionRate: number[]) => void
 }
 
-const CalculatorBonusInput: React.FC<IProps> = ({
+const CalculatorBonusInputComponent: React.FC<IProps> = ({
 	transactionRate,
 	handleBonusInputChange,
 	handleBonusInputBlur,
@@ -36,7 +36,7 @@ const CalculatorBonusInput: React.FC<IProps> = ({
 					onChange={handleBonusInputChange}
 					onBlur={handleBonusInputBlur}
 				/>
-				<CalculatorRangeSlider
+				<CalculatorRangeSliderContainer
 					min={MIN}
 					max={MAX}
 					step={STEP}
@@ -53,4 +53,4 @@ const CalculatorBonusInput: React.FC<IProps> = ({
 	)
 }
 
-export default CalculatorBonusInput
+export default CalculatorBonusInputComponent
