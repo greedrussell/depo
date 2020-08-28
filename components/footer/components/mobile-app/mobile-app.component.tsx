@@ -4,7 +4,7 @@ import AppleSVG from '../../../../public/assets/svg/footer__mobile-app--apple.sv
 import GoogleSVG from '../../../../public/assets/svg/footer__mobile-app--google.svg'
 import styles from './mobile-app.module.styl'
 
-const MobileApp = () => (
+const FooterMobileAppComponent = () => (
 	<div>
 		<h3 className={styles.title}>Мобильный банк</h3>
 		<div className={styles.block}>
@@ -22,4 +22,4 @@ const MobileApp = () => (
 	</div>
 )
 
-export default MobileApp
+export default FooterMobileAppComponent

@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './contact.module.styl'
 
-const Contact: React.FC<{}> = () => (
+const FooterContactComponent: React.FC<{}> = () => (
 	<div className={styles.contact}>
 		<p className={styles.title}>Свяжитесь с нами</p>
 		<a href="tel:+74957754775" className={styles.link}>
@@ -14,4 +14,4 @@ const Contact: React.FC<{}> = () => (
 	</div>
 )
 
-export default Contact
+export default FooterContactComponent

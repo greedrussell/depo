@@ -1,13 +1,12 @@
 import React from 'react'
 
 import styles from './copyright.module.styl'
-import LogoSVG from '../../../../public/assets/svg/footer__logo.svg'
 
 interface IProps {
 	logoUrl: string
 }
 
-const CopyrightComponent: React.FC<IProps> = ({ logoUrl }) => (
+const FooterCopyrightComponent: React.FC<IProps> = ({ logoUrl }) => (
 	<div className={styles.block}>
 		<div className="container">
 			<div className={styles.wrapper}>
@@ -21,4 +20,4 @@ const CopyrightComponent: React.FC<IProps> = ({ logoUrl }) => (
 	</div>
 )
 
-export default CopyrightComponent
+export default FooterCopyrightComponent

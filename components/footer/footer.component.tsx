@@ -2,13 +2,13 @@ import React from 'react'
 
 import styles from './footer.module.styl'
 import { IFooter as IProps } from './footer.interface'
-import Menu from './components/menu/menu.component'
-import Contact from './components/contact/contact.component'
-import SocialNetwork from './components/social-network/social-network.component'
-import MobileApp from './components/mobile-app/mobile-app.component'
-import Copyright from './components/copyright/copyright.component'
+import FooterMenuComponent from './components/menu/menu.component'
+import FooterContactComponent from './components/contact/contact.component'
+import FooterSocialNetworkComponent from './components/social-network/social-network.component'
+import FooterMobileAppComponent from './components/mobile-app/mobile-app.component'
+import FooterCopyrightComponent from './components/copyright/copyright.component'
 
-const Footer: React.FC<IProps> = ({
+const FooterComponent: React.FC<IProps> = ({
 	isMobileApp = false,
 	isSocialNetwork = false,
 	isContact = false,
@@ -26,22 +26,22 @@ const Footer: React.FC<IProps> = ({
 			<div className="container">
 				{isMenu && (
 					<div className={styles.top}>
-						<Menu menu={menu} />
+						<FooterMenuComponent menu={menu} />
 					</div>
 				)}
 				{(isContact || isSocialNetwork || isMobileApp) && (
 					<div className={styles.middle}>
 						<div className={styles.left}>
-							{isContact && <Contact />}
-							{isSocialNetwork && <SocialNetwork />}
+							{isContact && <FooterContactComponent />}
+							{isSocialNetwork && <FooterSocialNetworkComponent />}
 						</div>
-						{isMobileApp && <MobileApp />}
+						{isMobileApp && <FooterMobileAppComponent />}
 					</div>
 				)}
 			</div>
-			{isCopyright && <Copyright logoUrl={logoUrl} />}
+			{isCopyright && <FooterCopyrightComponent logoUrl={logoUrl} />}
 		</footer>
 	)
 }
 
-export default Footer
+export default FooterComponent

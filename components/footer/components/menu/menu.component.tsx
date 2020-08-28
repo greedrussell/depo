@@ -12,7 +12,7 @@ interface IProps {
 	menu: IMenuItem[]
 }
 
-const Menu: React.FC<IProps> = ({ menu }) => (
+const FooterMenuComponent: React.FC<IProps> = ({ menu }) => (
 	<ul className={styles.menu}>
 		{menu.map(item => (
 			<li className={styles.item} key={item.id}>
@@ -24,4 +24,4 @@ const Menu: React.FC<IProps> = ({ menu }) => (
 	</ul>
 )
 
-export default Menu
+export default FooterMenuComponent
