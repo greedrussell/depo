@@ -1,14 +1,37 @@
 import React from 'react'
 
-import './calculator.css'
-import CalculatorInfoPanel from './components/calculator-info-panel/calculator-info-panel.component'
+import styles from './calculator.module.styl'
+import CalculatorInfoPanelComponent from './components/calculator-info-panel/calculator-info-panel.component'
 import PlusesList from './components/pluses/pluses-list.component'
 import CalculatorInput from './components/calculator-input/calculator-input.component'
 import CalculatorMonthTabs from './components/calculator-month-tabs/calculator-month-tabs.component'
 import CalculatorBonusInput from './components/calculator-bonus-input/calculator-bonus-input.component'
 
-class Calculator extends React.Component {
-	constructor(props) {
+interface IDeposit {
+	id: number
+	month: number
+	percent: number
+	title: string
+	subTitle: string
+}
+
+interface IState {
+	activeTariff: number
+	tariffName: string
+	deposit: IDeposit[]
+	minDepositRate: number
+	maxDepositRate: number
+	month: number
+	depositRate: number
+	transactionRate: number
+	percent: number
+	bonusPercent: number
+	bonusSum: number
+	totalSum: number
+}
+
+class Calculator extends React.Component<{}, IState> {
+	constructor(props: {}) {
 		super(props)
 
 		this.state = {
@@ -64,7 +87,7 @@ class Calculator extends React.Component {
 		})
 	}
 
-	getSum = (depositRate, percent, month) => {
+	getSum = (depositRate: number, percent: number, month: number): number => {
 		const totalPercent = percent * 0.01
 		const sumDuringYear = Math.round(+depositRate * totalPercent)
 		const sum = Math.round((sumDuringYear / 12) * month)
@@ -72,7 +95,11 @@ class Calculator extends React.Component {
 		return sum
 	}
 
-	getBonusSum = (depositRate, bonusPercent, month) => {
+	getBonusSum = (
+		depositRate: number,
+		bonusPercent: number,
+		month: number
+	): number => {
 		const totalPercent = bonusPercent * 0.01
 		const maxInterestAmount = 1000000
 
@@ -88,7 +115,7 @@ class Calculator extends React.Component {
 		return sum
 	}
 
-	getSumFormat = sum => {
+	getSumFormat = (sum: number): string => {
 		let depositRateArr = sum.toString().split('').reverse()
 		let indexsArr = []
 
@@ -105,7 +132,7 @@ class Calculator extends React.Component {
 		return depositRateArr.reverse().join('')
 	}
 
-	getDate = () => {
+	getDate = (): string => {
 		const { month } = this.state
 		const monthArr = [
 			'января',
@@ -135,7 +162,7 @@ class Calculator extends React.Component {
 		return 'к ' + resultDay + ' ' + monthArr[resultMonth] + ' ' + resultYear
 	}
 
-	getBonusPercent = transactionRate => {
+	getBonusPercent = (transactionRate: number): number => {
 		let bonusPercent = 0
 
 		if (transactionRate >= 15000) {
@@ -149,7 +176,7 @@ class Calculator extends React.Component {
 		return bonusPercent
 	}
 
-	handleInputChange = event => {
+	handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): any => {
 		const { percent, month, maxDepositRate, transactionRate } = this.state
 		const bonusPercent = this.getBonusPercent(transactionRate)
 
@@ -178,7 +205,7 @@ class Calculator extends React.Component {
 		})
 	}
 
-	handleInputBlur = () => {
+	handleInputBlur = (): void => {
 		const {
 			bonusPercent,
 			percent,
@@ -208,7 +235,7 @@ class Calculator extends React.Component {
 		})
 	}
 
-	handleInputRangeChange = depositRate => {
+	handleInputRangeChange = (depositRate: number[]): void => {
 		const { bonusPercent, percent, month } = this.state
 		const sum = this.getSum(depositRate[0], percent, month)
 		const bonusSum = this.getBonusSum(depositRate[0], bonusPercent, month)
@@ -221,7 +248,7 @@ class Calculator extends React.Component {
 		})
 	}
 
-	handleMonthClick = (month, percent) => () => {
+	handleMonthClick = (month: number, percent: number) => (): void => {
 		const { depositRate, bonusPercent } = this.state
 
 		if (this.state.month === month) {
@@ -240,7 +267,9 @@ class Calculator extends React.Component {
 		})
 	}
 
-	handleBonusInputChange = event => {
+	handleBonusInputChange = (
+		event: React.ChangeEvent<HTMLInputElement>
+	): void => {
 		const maxTransactionRate = 100000
 		const transactionRate = +event.target.value
 
@@ -270,7 +299,7 @@ class Calculator extends React.Component {
 		})
 	}
 
-	handleBonusInputBlur = () => {
+	handleBonusInputBlur = (): void => {
 		const maxTransactionRate = 100000
 
 		let { transactionRate } = this.state
@@ -284,7 +313,7 @@ class Calculator extends React.Component {
 		})
 	}
 
-	handleBonusInputRangeChange = transactionRate => {
+	handleBonusInputRangeChange = (transactionRate: number[]): void => {
 		const { depositRate, percent, month } = this.state
 		const bonusPercent = this.getBonusPercent(transactionRate[0])
 
@@ -315,20 +344,16 @@ class Calculator extends React.Component {
 		} = this.state
 
 		return (
-			<section className="Calculator">
+			<section className={styles.section}>
 				<div className="container">
-					<h2 className="title-h2 Calculator__title">
+					<h2 className={styles.title + ' title-h2'}>
 						Рассчитайте доход&nbsp;
-						<span className="Calculator__title__inline">
-							по накопительному счету
-						</span>
+						<span className={styles.inline}>по накопительному счету</span>
 					</h2>
 					<PlusesList />
-					<div className="Calculator__main">
-						<div className="Calculator__left">
-							{/* сумма депозита */}
+					<div className={styles.main}>
+						<div className={styles.left}>
 							<CalculatorInput
-								tariffName={tariffName}
 								depositRate={depositRate}
 								minDepositRate={minDepositRate}
 								maxDepositRate={maxDepositRate}
@@ -352,8 +377,8 @@ class Calculator extends React.Component {
 								handleBonusInputRangeChange={this.handleBonusInputRangeChange}
 							/>
 						</div>
-						<div className="Calculator__rigth">
-							<CalculatorInfoPanel
+						<div className={styles.rigth}>
+							<CalculatorInfoPanelComponent
 								totalPercent={bonusPercent + percent}
 								bonusSum={this.getSumFormat(totalSum)}
 								finalSum={this.getSumFormat(totalSum + depositRate)}

@@ -1,28 +1,36 @@
 import React from 'react'
 
-import './calculator-bonus-input.css'
+import styles from './calculator-bonus-input.module.styl'
 import CalculatorRangeSlider from '../calculator-range/calculator-range.component'
 
-const CalculatorBonusInput = ({
+interface IProps {
+	transactionRate: number
+	bonusPercent: number
+	handleBonusInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+	handleBonusInputBlur: () => void
+	handleBonusInputRangeChange: (transactionRate: number[]) => void
+}
+
+const CalculatorBonusInput: React.FC<IProps> = ({
 	transactionRate,
 	handleBonusInputChange,
 	handleBonusInputBlur,
 	bonusPercent,
 	handleBonusInputRangeChange,
 }) => {
-	const MIN = 0
-	const MAX = 100000
-	const STEP = 1000
+	const MIN: number = 0
+	const MAX: number = 100000
+	const STEP: number = 1000
 
 	return (
-		<div className="CalculatorBonusInput">
-			<h3 className="Calculator__sub-title CalculatorBonusInput__title">
+		<div>
+			<h3 className={styles.title}>
 				Сумма покупок в месяц (необходима для повышенной ставки)
 			</h3>
-			<div className="CalculatorBonusInput__block">
+			<div className={styles.block}>
 				<input
 					type="text"
-					className="CalculatorBonusInput__input"
+					className={styles.input}
 					placeholder=""
 					value={transactionRate}
 					onChange={handleBonusInputChange}
@@ -35,8 +43,8 @@ const CalculatorBonusInput = ({
 					rate={[transactionRate]}
 					handleChange={handleBonusInputRangeChange}
 				/>
-				<div className="CalculatorBonusInput__bonus-info">
-					<p className="CalculatorBonusInput__bonus-info__text">
+				<div className={styles.info}>
+					<p className={styles.text}>
 						+ {bonusPercent.toString().replace('.', ',')}% к ставке
 					</p>
 				</div>

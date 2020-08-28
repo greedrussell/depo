@@ -1,0 +1,56 @@
+@import '../../../../src/styles/variable.styl'
+
+.title 
+  margin-bottom 8px
+  max-width 280px
+  font-family $secondary-font
+  font-size 16px
+  line-height 24px
+  color $light-black
+  font-weight normal
+
+  @media (min-width: $tablet) 
+    max-width 100%
+  
+.block 
+  display flex
+  flex-direction column
+  align-items flex-start
+  margin-bottom 18px
+  position relative
+
+.input 
+  width 100%
+  padding 16px 138px 16px 16px
+  border 1px solid #C6C6C6
+  border-radius 12px
+  height 56px
+  transition $duration
+  cursor pointer
+  outline none
+  box-sizing border-box
+  background-color #fff
+  font-family $accent-font
+  font-weight bold
+  font-size 16px
+  line-height 24px
+  color $dark-black
+  margin-bottom -16px
+
+  &:focus,
+  &:active,
+  &:hover 
+    border 2px solid $light-green
+    background #fff
+
+.info
+  position absolute
+  top 16px
+  right 16px
+
+.text
+  font-family $secondary-font
+  font-weight normal
+  font-size 16px
+  line-height 24px
+  color $light-black

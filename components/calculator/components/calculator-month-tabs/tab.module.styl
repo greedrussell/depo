@@ -1,0 +1,52 @@
+@import '../../../../src/styles/variable.styl'
+
+.tab 
+  border 1px solid #B8B8B8
+  box-sizing border-box
+  border-radius 8px
+  padding 8px 22px
+  display flex
+  align-items center
+  justify-content center
+  flex-direction column
+  color $black
+  cursor pointer
+  margin-bottom 16px
+  margin-right 16px
+  transition $duration
+
+  @media (min-width: 992px)
+    margin-bottom 0
+
+  &.active 
+    border 1px solid $green
+    box-shadow 0 0 0 1px $green
+
+  &:last-child 
+    margin-right 0
+
+    @media (min-width: $tablet) 
+      margin-bottom 0
+
+.title 
+  font-family $accent-font
+  font-weight bold
+  font-size 16px
+  line-height 24px
+  white-space nowrap
+  color $dark-black
+
+.text
+  font-family $secondary-font
+  font-weight normal
+  font-size 14px
+  line-height 20px
+  white-space nowrap
+  color $grey
+
+  @media (min-width: $laptop) 
+    font-size 14px
+  
+.active .title,
+.active .text 
+  color $green

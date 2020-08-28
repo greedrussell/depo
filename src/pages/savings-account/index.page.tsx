@@ -7,6 +7,7 @@ import {
 } from '../../../components/footer/footer.interface'
 import LogoSVG from '../../../public/assets/svg/footer__logo.svg'
 import Layout from '../../../components/layout'
+import CalculatorContainer from '../../../components/calculator/calculator.container'
 import HeroImg from './components/hero-img/hero-img.component'
 import ActionInfoContainer from './components/action-info/action-info.container'
 
@@ -60,10 +61,13 @@ const DepositPlusCardPage: React.FC<{}> = () => (
 					<ActionInfoContainer />
 				</div>
 			</section>
+			<CalculatorContainer />
 
 			{/* 
 				<AboutAction />
-				<Calculator />
+
+				<CalculatorContainer />
+
 				<HowItWork />
 				<CustomerInfo />
 				<Faq />

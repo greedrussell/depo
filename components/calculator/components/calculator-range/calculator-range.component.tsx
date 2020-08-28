@@ -1,12 +1,20 @@
 import React from 'react'
 import { Range, getTrackBackground } from 'react-range'
 
-import './calculator-range.css'
+import styles from './calculator-range.module.styl'
 import CalculatorThump from '../calculator-thumb/calculator-thumb.component'
 
-class CalculatorRangeSlider extends React.Component {
-	shouldComponentUpdate(nextProps) {
-		if (nextProps.rate > nextProps.max) {
+interface IProps {
+	rate: number[]
+	min: number
+	max: number
+	step: number
+	handleChange: (transactionRate: number[]) => void
+}
+
+class CalculatorRangeSlider extends React.Component<IProps, {}> {
+	shouldComponentUpdate(nextProps: IProps) {
+		if (nextProps.rate[0] > nextProps.max) {
 			return false
 		}
 
@@ -17,7 +25,7 @@ class CalculatorRangeSlider extends React.Component {
 		const { rate, handleChange, min, max, step } = this.props
 
 		return (
-			<div className="CalculatorRangeSlider">
+			<div className={styles.slider}>
 				<Range
 					step={step}
 					min={min}
@@ -28,9 +36,9 @@ class CalculatorRangeSlider extends React.Component {
 						<div
 							onMouseDown={props.onMouseDown}
 							onTouchStart={props.onTouchStart}
-							className="CalculatorTrack">
+							className={styles.track}>
 							<div
-								className="CalculatorTrack__line"
+								className={styles.line}
 								ref={props.ref}
 								style={{
 									background: getTrackBackground({

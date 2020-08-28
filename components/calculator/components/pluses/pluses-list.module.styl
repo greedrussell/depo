@@ -1,0 +1,36 @@
+@import '../../../../src/styles/variable.styl'
+
+.list 
+  display flex
+  flex-wrap wrap
+  margin-bottom 58px
+
+  @media (min-width: $tablet) 
+    margin-bottom 0
+  
+.item 
+  display flex
+  flex 0 0 100%
+  margin-bottom 24px
+  align-items flex-start
+
+  &:last-child 
+    margin-bottom 0
+
+  @media (min-width: $tablet)  
+    flex 0 0 50%
+  
+  @media (min-width: 992px) 
+    flex 0 0 33%
+    margin-bottom 0
+  
+.img 
+  width 24px
+  margin-right 16px
+
+.text 
+  font-family $secondary-font
+  font-weight normal
+  font-size 16px
+  line-height 24px
+  color $dark-black
