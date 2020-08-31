@@ -1,0 +1,51 @@
+@import '../../../../src/styles/variable.styl'
+
+.title 
+  margin-bottom 22px
+  font-family $accent-font
+  font-weight bold
+  color $grey
+
+.list 
+  list-style-type none
+  display flex
+  border-bottom 2px solid #F1F1F1
+  padding-bottom 10px
+  position relative
+  margin-bottom 50px
+  flex-direction column
+  overflow hidden
+
+  @media(min-width: $tablet)
+    flex-direction row
+    overflow auto
+  
+.line 
+  display block
+  transition 0.4s
+  height 4px
+  border-radius 6px
+  background-color $green
+  position absolute
+  bottom -1px
+  left 0
+  opacity 0
+
+  @media(min-width: $tablet)
+    opacity 1
+
+.item 
+  font-size 20px
+  line-height 32px
+  font-family $title-font
+  font-weight 800
+  color $light-black
+  margin-right 33px
+  cursor pointer
+  padding 14px 0
+
+  &.active 
+      color $dark-black
+
+  @media(min-width: $tablet) 
+    padding 0

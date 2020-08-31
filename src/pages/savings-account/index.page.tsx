@@ -61,13 +61,10 @@ const SavingAccountPage: React.FC<{}> = () => (
 					<ActionInfoContainer />
 				</div>
 			</section>
+			{/* <AboutAction /> */}
 			<CalculatorContainer />
 
 			{/* 
-				<AboutAction />
-
-				<CalculatorContainer />
-
 				<HowItWork />
 				<CustomerInfo />
 				<Faq />
