@@ -71,8 +71,8 @@
   },
   "lint-staged": {
     "src/**/**/*.page.tsx": [
-      "tsc -p tsconfig.json",
-      "prettier --jsx-single-quote=false --write"
+      "prettier --jsx-single-quote=false",
+      "git add ."
     ]
   }
 }
