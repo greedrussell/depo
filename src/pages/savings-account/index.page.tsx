@@ -1,15 +1,14 @@
 import Head from 'next/head'
-
-import styles from './saving-account.module.styl'
+import CalculatorContainer from '../../../components/calculator/calculator.container'
 import {
 	IFooter,
-	IFooterMenuItem,
+	IFooterMenuItem
 } from '../../../components/footer/footer.interface'
-import LogoSVG from '../../../public/assets/svg/footer__logo.svg'
 import Layout from '../../../components/layout'
-import CalculatorContainer from '../../../components/calculator/calculator.container'
-import HeroImg from './components/hero-img/hero-img.component'
+import LogoSVG from '../../../public/assets/svg/footer__logo.svg'
 import ActionInfoContainer from './components/action-info/action-info.container'
+import HeroImg from './components/hero-img/hero-img.component'
+import styles from './saving-account.module.styl'
 
 const MENU__LIST: IFooterMenuItem[] = [
 	{
@@ -35,7 +34,7 @@ const MENU__LIST: IFooterMenuItem[] = [
 ]
 
 const FOOTER_CONFIG: IFooter = {
-	isMobileApp: true,
+	isMobileApp: 1,
 	isSocialNetwork: true,
 	isContact: true,
 	isMenu: true,
@@ -47,12 +46,12 @@ const FOOTER_CONFIG: IFooter = {
 const SavingAccountPage: React.FC<{}> = () => (
 	<>
 		<Head>
-			<title>Накопительный счет</title>
+			<title>OTP BANK: Накопительный счет</title>
 		</Head>
 		<Layout footer={FOOTER_CONFIG}>
 			<section className={styles['hero-img']}>
 				{/* <HeroImgNav isScroll={isScroll} /> */}
-				<div className="container">
+				<div className='container'>
 					<HeroImg />
 				</div>
 			</section>

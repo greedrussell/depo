@@ -35,19 +35,15 @@ interface IHook {
 }
 
 export const useActiveTariffState = (initialState: ITariff[]): IHook => {
-	const [activeTariff, setActiveTariff] = useState(() => {
-		const activeTariff = initialState[0]
-
-		return {
-			id: activeTariff.id,
-			tariffName: activeTariff.tariffName,
-			deposit: activeTariff.deposit,
-			pluses: activeTariff.pluses,
-			month: activeTariff.deposit[0].month,
-			percent: activeTariff.deposit[0].percent,
-			minDepositRate: activeTariff.deposit[0].minDepositRate,
-			maxDepositRate: activeTariff.deposit[0].maxDepositRate,
-		}
+	const [activeTariff, setActiveTariff] = useState({
+		id: initialState[0].id,
+		tariffName: initialState[0].tariffName,
+		deposit: initialState[0].deposit,
+		pluses: initialState[0].pluses,
+		month: initialState[0].deposit[0].month,
+		percent: initialState[0].deposit[0].percent,
+		minDepositRate: initialState[0].deposit[0].minDepositRate,
+		maxDepositRate: initialState[0].deposit[0].maxDepositRate,
 	})
 
 	const handleActiveTariffClick = (tariffId: number) => () => {

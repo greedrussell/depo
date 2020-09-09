@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch, connect } from 'react-redux'
 
 import styles from './calculator.module.styl'
 import {
@@ -15,8 +16,10 @@ import CalculatorMonthTabsComponent from './components/month-tabs/month-tabs.com
 import CalculatorBonusInputComponent from './components/bonus-input/bonus-input.component'
 import CalculatorTariffTabsComponent from './components/tariff-tabs/tariff-tabs.component'
 
-import { useInputHook } from './calculator-input.hook'
+import { useInputState } from './calculator-input.hook'
 import { useActiveTariffState } from './calculator-active-tariff.hook'
+
+import setTariffAction from '../../src/pages/action'
 
 const TARIFF_LIST = [
 	{
@@ -184,17 +187,30 @@ const CalculatorContainer: React.FC<any> = () => {
 		activeTariff,
 		handleActiveTariffClick,
 	} = useActiveTariffState(TARIFF_LIST)
-	// const { depositRate, handleInputChange } = useInputHook(300000)
+	const { depositRate, handleInputChange, handleInputBlur } = useInputState(
+		300000,
+		activeTariff.minDepositRate,
+		activeTariff.maxDepositRate
+	)
+
+	const activeTariffStore = useSelector(state => state)
+	const dispatch = useDispatch()
+
+	console.log('CalculatorContainer', activeTariffStore)
 	// let totalPercentSum = 0
 
-	// useEffect(() => {
-	// 	const percentSum = getPercentSum(depositRate, percent, month)
-	// 	const bonusSum = getBonusSum(depositRate, bonusPercent, month)
-
-	// 	totalPercentSum = percentSum + bonusSum
-
-	// 	console.log('useEffect totalPrice - ', totalPercentSum)
-	// })
+	useEffect(() => {
+		// componentDiDMonth, componentDidUpdate, componentWillUnmount
+		// if (depositRate < activeTariff.minDepositRate) {
+		// 	setDepositRate(activeTariff.minDepositRate)
+		// } else if (depositRate > activeTariff.maxDepositRate) {
+		// 	setDepositRate(activeTariff.maxDepositRate)
+		// }
+		// 	const percentSum = getPercentSum(depositRate, percent, month)
+		// 	const bonusSum = getBonusSum(depositRate, bonusPercent, month)
+		// 	totalPercentSum = percentSum + bonusSum
+		// 	console.log('useEffect totalPrice - ', totalPercentSum)
+	})
 
 	return (
 		<section className={styles.section}>
@@ -202,26 +218,30 @@ const CalculatorContainer: React.FC<any> = () => {
 				<h2 className={styles.title + ' title-h2'}>
 					Рассчитайте доход&nbsp;
 					<span className={styles.inline}>по накопительному счету</span>
+					<button onClick={() => dispatch(setTariffAction(activeTariff))}>
+						Set active tariff
+					</button>
 				</h2>
 				<CalculatorTariffTabsComponent
 					tariffList={tariffList}
 					activeTariffId={activeTariff.id}
 					handleActiveTariffClick={handleActiveTariffClick}
+					depositRate={depositRate}
 				/>
 				{activeTariff.pluses.length > 0 && (
 					<CalculatorPlusesListComponent pluses={activeTariff.pluses} />
 				)}
 				<div className={styles.main}>
 					<div className={styles.left}>
-						{/* <CalculatorInputComponent
+						<CalculatorInputComponent
 							depositRate={depositRate}
-							minDepositRate={state.minDepositRate}
-							maxDepositRate={state.maxDepositRate}
+							minDepositRate={activeTariff.minDepositRate}
+							maxDepositRate={activeTariff.maxDepositRate}
 							title={'Первоначальная сумма накопления'}
-							handleInputBlur={this.handleInputBlur}
+							handleInputBlur={handleInputBlur}
 							handleInputChange={handleInputChange}
-							handleChange={this.handleInputRangeChange}
-						/> */}
+							// handleChange={this.handleInputRangeChange}
+						/>
 						{/* <CalculatorMonthTabsComponent
 								deposit={deposit}
 								month={month}
@@ -250,4 +270,4 @@ const CalculatorContainer: React.FC<any> = () => {
 	)
 }
 
-export default CalculatorContainer
+export default connect(null, null, null)(CalculatorContainer)

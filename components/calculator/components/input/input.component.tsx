@@ -2,15 +2,16 @@ import React from 'react'
 
 import styles from './input.module.styl'
 import CalculatorRangeSliderContainer from '../range/range.container'
+import { getSumFormat } from '../../../../helpers/calculator.helper'
+// import {useInputState} from '../../calculator-input.hook'
 
 interface IProps {
 	depositRate: number
 	minDepositRate: number
 	maxDepositRate: number
-	handleChange: (depositRate: number[]) => void
+	// handleChange: (depositRate: number[]) => void
 	handleInputBlur: () => void
 	handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => any
-	getSumFormat: (sum: number) => string
 	title: string
 }
 
@@ -18,17 +19,16 @@ const CalculatorInputComponent: React.FC<IProps> = ({
 	depositRate,
 	minDepositRate,
 	maxDepositRate,
-	handleChange,
+	// handleChange,
 	handleInputBlur,
 	handleInputChange,
-	getSumFormat,
 	title = '',
 }) => {
 	if (!minDepositRate || !maxDepositRate) {
 		return null
 	}
 
-	const STEP = 10000
+	// const STEP = 10000
 
 	return (
 		<div className={styles.container}>
@@ -42,17 +42,17 @@ const CalculatorInputComponent: React.FC<IProps> = ({
 					onChange={handleInputChange}
 					onBlur={handleInputBlur}
 				/>
-				<CalculatorRangeSliderContainer
+				{/* <CalculatorRangeSliderContainer
 					min={minDepositRate}
 					max={maxDepositRate}
 					rate={[depositRate]}
 					step={STEP}
 					handleChange={handleChange}
-				/>
+				/> */}
 			</div>
 			<div className={styles.info}>
-				<div className={styles.text}>от {getSumFormat(minDepositRate)} ₽</div>
-				<div className={styles.text}>до {getSumFormat(maxDepositRate)} ₽</div>
+				<div className={styles.text}>от {getSumFormat(minDepositRate)}</div>
+				<div className={styles.text}>до {getSumFormat(maxDepositRate)}</div>
 			</div>
 		</div>
 	)

@@ -20,12 +20,14 @@ interface IProps {
 	tariffList: ITariff[]
 	handleActiveTariffClick: any
 	activeTariffId: number
+	depositRate: number
 }
 
 const CalculatorTariffTabsComponent: React.FC<IProps> = ({
 	tariffList,
 	handleActiveTariffClick,
 	activeTariffId,
+	depositRate,
 }) => {
 	return (
 		<>
@@ -38,7 +40,7 @@ const CalculatorTariffTabsComponent: React.FC<IProps> = ({
 								? styles.item + ' ' + styles.active
 								: styles.item
 						}
-						onClick={handleActiveTariffClick(tariff.id)}
+						onClick={handleActiveTariffClick(tariff.id, depositRate)}
 						key={tariff.id}>
 						{tariff.tariffName}
 					</li>

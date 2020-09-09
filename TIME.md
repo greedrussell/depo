@@ -9,3 +9,7 @@ savings account, deposit + card, deposits
 1. Перенести все наши лендосы - лендинг savings account
 2. Написать админку, чтобы люди могли править процент
 3. Добавить redux
+
+Проблема с react devtool
+1. Связано с nextJS, нужен next-wrapper
+2. Не правильно конфигурирую
