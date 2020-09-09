@@ -9,7 +9,8 @@
     "export": "next export",
     "serv": "node server/app.js",
     "precommit": "lint-staged",
-    "tsc": "tsc -p tsconfig.json"
+    "tsc": "tsc -p tsconfig.json",
+    "pt": "prettier --jsx-single-quote=false --write src/**/**/*.page.tsx"
   },
   "license": "ISC",
   "browserslist": {
@@ -67,5 +68,10 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/**/*.page.tsx": [
+      "prettier --jsx-single-quote=false --write"
+    ]
   }
 }

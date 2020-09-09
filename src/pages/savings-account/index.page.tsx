@@ -2,7 +2,7 @@ import Head from 'next/head'
 import CalculatorContainer from '../../../components/calculator/calculator.container'
 import {
 	IFooter,
-	IFooterMenuItem
+	IFooterMenuItem,
 } from '../../../components/footer/footer.interface'
 import Layout from '../../../components/layout'
 import LogoSVG from '../../../public/assets/svg/footer__logo.svg'
@@ -51,7 +51,7 @@ const SavingAccountPage: React.FC<{}> = () => (
 		<Layout footer={FOOTER_CONFIG}>
 			<section className={styles['hero-img']}>
 				{/* <HeroImgNav isScroll={isScroll} /> */}
-				<div className='container'>
+				<div className="container">
 					<HeroImg />
 				</div>
 			</section>

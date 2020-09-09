@@ -1,3 +1,0 @@
-{
-  "*.page.{ts, tsx}": ["tsc -p tsconfig.json", "git add ."]
-}
