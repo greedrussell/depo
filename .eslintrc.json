@@ -1,0 +1,84 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"useJSXTextNode": true,
+		"jsx": true,
+		"ecmaVersion": 8,
+		"sourceType": "module"
+	},
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"globals": {
+		"_": true,
+		"__": true,
+		"__dirname": true,
+		"process": true,
+		"module": true,
+		"require": true,
+		"infProd": true,
+		"errProd": true,
+		"warnProd": true,
+		"log": true,
+		"err": true,
+		"console": true,
+		"Promise": true,
+		"serviceworker": true,
+		"mongo": true
+	},
+	"plugins": [
+		"react",
+		"react-hooks",
+		"@typescript-eslint"
+	],
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier",
+		"prettier/@typescript-eslint"
+	],
+	"settings": {
+		"react": {
+			"createClass": "createReactClass",
+			"pragma": "React",
+			"version": "16.13.1"
+		}
+	},
+	"rules": {
+		// typescript
+		"@typescript-eslint/explicit-function-return-type": "off",
+		// react hooks
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		// eslint
+		"no-await-in-loop": "error",
+		"no-console": "error",
+		"no-extra-semi": "error",
+		"no-empty": "warn",
+		"no-extra-parens": [
+			"warn",
+			"all",
+			{
+				"conditionalAssign": true
+			}
+		]
+		// 	no-func-assign no-extra-parens
+		/* 
+			"husky": {
+				"hooks": {
+					"pre-commit": "lint-staged"
+				}
+			},
+			"lint-staged": {
+				"src/** /* * / *.page.tsx": [
+					"tsc -p tsconfig.json",
+					"prettier --jsx-single-quote=false",
+					"git add ."
+				]
+			}
+		*/
+	}
+}
